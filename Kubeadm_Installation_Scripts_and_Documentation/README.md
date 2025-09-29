@@ -93,7 +93,7 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 4. **Install Containerd**:
     ```bash
     sudo apt-get update
-    sudo apt-get install docker.io -y
+    sudo apt-get install docker.io
     sudo apt-get install -y ca-certificates curl
     sudo install -m 0755 -d /etc/apt/keyrings
     sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
