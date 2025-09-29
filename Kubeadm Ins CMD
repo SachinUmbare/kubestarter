@@ -15,3 +15,24 @@ echo 'ded https://packages.cloud.google.com/apt kubernetes-xenial main' | sudo t
 
 sudo apt update
 sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00 -y
+
+Only Run on Master
+
+1 sudo kubeadm init
+
+2  mkdir -p "$HOME"/.kube
+   sudo cp -i /etc/kubernetes/admin.conf "$HOME"/.kube/config
+   sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config 
+
+3  kubectl apply -f https://github.com/weaveworks/weave/realease/download/v2.8.1/weave-daemonset-k8s.yaml
+
+4  kubeadm token create --print-join-command
+
+
+Worker Nodes
+ 1 sudo kubeadm reset pre-flight checks
+
+ 2 sudo <paste-join-command-here> --v=5
+
+
+
