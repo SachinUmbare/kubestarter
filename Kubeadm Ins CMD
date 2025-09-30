@@ -1,5 +1,5 @@
 
-BOTH MASTER AND WORKER NODE
+BOTH MASTER AND WORKER NODEE
 
 sudo apt update
 sudo apt-get install -y apt-transport-https ca-certificates curl
